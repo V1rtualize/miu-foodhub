@@ -1,0 +1,55 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-gradient-to-br dark:from-slate-900 dark:to-slate-800 from-orange-50 to-yellow-50 text-gray-900 dark:text-gray-100 font-sans;
+    }
+
+    /* Dark mode overrides */
+    .dark .bg-white {
+        @apply bg-slate-800 border-slate-700;
+    }
+
+    .dark .bg-gray-50 {
+        @apply bg-slate-900/50;
+    }
+
+    .dark .bg-orange-50 {
+        @apply bg-slate-900/30;
+    }
+
+    .dark .border-gray-200 {
+        @apply border-slate-700;
+    }
+
+    .dark .text-gray-600 {
+        @apply text-slate-300;
+    }
+
+    .dark .text-gray-500 {
+        @apply text-slate-400;
+    }
+
+    .dark .shadow-sm {
+        @apply shadow-slate-700/20;
+    }
+
+    .dark .shadow-lg {
+        @apply shadow-slate-700/40 shadow-xl dark:shadow-2xl;
+    }
+
+    /* PWA Toast */
+    .pwa-toast {
+        @apply fixed bottom-6 right-6 z-[9999] bg-white dark:bg-slate-800 border dark:border-slate-700 shadow-2xl rounded-3xl p-6 max-w-sm transform translate-x-full transition-all duration-300 border-2;
+    }
+
+        .pwa-toast.show {
+            @apply translate-x-0;
+        }
+}
